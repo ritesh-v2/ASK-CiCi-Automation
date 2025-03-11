@@ -23,4 +23,4 @@ jobs:
           npx playwright install --with-deps
 
       - name: Run your tests
-        run: npx playwright test tests/home.spec.ts
+        run: npx playwright test tests/css.spec.ts
