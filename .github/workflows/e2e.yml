@@ -27,7 +27,7 @@ jobs:
 
       - name: Upload test results
         if: always()  # Always upload test results, even if the tests fail
-        uses: actions/upload-artifact@v3  # Corrected action name
+        uses: actions/upload-artifact@v2  # Corrected action name
         with:
           name: Test Result  # The name for the uploaded artifact
           path: test-results  # Path to test results (make sure this folder exists)
