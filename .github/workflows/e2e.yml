@@ -24,3 +24,9 @@ jobs:
 
       - name: Run your tests
         run: npx playwright test tests/css.spec.ts
+      - name: Upload test results
+          if: always()
+          uses: actions/Upload-artifact@v2
+          with:
+            name : Test Result
+            path: test-results
