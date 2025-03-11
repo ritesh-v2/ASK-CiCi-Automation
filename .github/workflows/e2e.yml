@@ -26,9 +26,7 @@ jobs:
         run: |
           npm install
           npx playwright install --force --with-deps
-
-      - name: Check Chromium Download URL
-        run: curl -I https://playwright.download.prss.microsoft.com/dbazure/download/playwright/builds/chromium/1161/chromium-linux.zip
+          npx playwright install chromium  # Explicitly install Chromium
 
       - name: Run your tests
         run: npx playwright test tests/css.spec.ts --reporter=html
