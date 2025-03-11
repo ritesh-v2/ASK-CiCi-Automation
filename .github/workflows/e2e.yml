@@ -23,11 +23,11 @@ jobs:
           npx playwright install --with-deps  # Install Playwright browsers with dependencies
 
       - name: Run your tests
-        run: npx playwright test tests/css.spec.ts  # Run Playwright tests
+        run: npx playwright test tests/css.spec.ts --reporter=html # Run Playwright tests
 
       - name: Upload test results
         if: always()  # Always upload test results, even if the tests fail
         uses: actions/upload-artifact@v2  # Corrected action name
         with:
           name: Test Result  # The name for the uploaded artifact
-          path: test-results  # Path to test results (make sure this folder exists)
+          path: ./test-results  # Path to test results (make sure this folder exists)
