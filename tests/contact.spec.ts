@@ -45,6 +45,8 @@ test.describe('This block is used for the contact form', () => {
         await captchaCheck.isVisible();
         
     })
-    
+//  //*[@class="recaptcha-checkbox-border"] Click on the this locator
+//  //button[@type="submit"]  Submit button
+
     
 })
