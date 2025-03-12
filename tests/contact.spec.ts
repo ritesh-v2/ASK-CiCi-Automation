@@ -1,5 +1,6 @@
 import{test,expect} from "@playwright/test"
 import exp from "constants"
+import { TIMEOUT } from "dns"
 
 test.describe('This block is used for the contact form', () => {
 
@@ -45,8 +46,41 @@ test.describe('This block is used for the contact form', () => {
         await captchaCheck.isVisible();
         
     })
-//  //*[@class="recaptcha-checkbox-border"] Click on the this locator
-//  //button[@type="submit"]  Submit button
 
+    test('Verify the accepting values of the contact form', async ({ page }) => {
+
+        const contactLink = page.locator('//ul[@id="menu-1-750ee2f"]//a[@href="https://sdetunicorns.com/contact-us/"]').nth(0);
+
+        await contactLink.click();
+
+        const nameCon = page.locator('#form-field-name');
+        const emailCon = page.locator('//input [@name = "form_fields[email]"]');
+        const msgForm = page.getByPlaceholder('Message');
+
+        await nameCon.fill('Sarvana')
+        await emailCon.fill('Sarvana@gmail.com')
+        await msgForm.fill('This is validation for contact form')
+
+        await page.mouse.wheel(0, 500);
+
+        await page.waitForTimeout(10000);
+
+        try {
+            // Wait for ad overlay and close it
+            await page.locator('//*[@id="hustle-popup-id-7"]/div[2]/div/div/div[2]/div/button').click();
+            console.log('Ad closed');
+          } catch (error) {
+            console.log('No ad found or already closed');
+        }
+        
+       /* const adClose = await page.locator('//*[@id="hustle-popup-id-7"]/div[2]/div/div/div[2]/div/button');
+
+        await adClose.click({timeout:30000});*/
+
+        const captchaCh = await page.locator('//div[@class="rc-anchor-center-item rc-anchor-checkbox-holder"]')
+
+        await captchaCh.check();
+
+    })
     
 })
