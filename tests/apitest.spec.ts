@@ -17,6 +17,15 @@ test.describe('API test', () => {
 
         randomPersonn =responseBody[0];
 
+        const postResponse = await fakerAPI.post('users/1/todos',{
+            data:{
+                "title":"This is the validation title",
+                "compeleted":"false"
+            }})
+
+        const postResponseBody = await postResponse.json();
+            console.log(postResponseBody);
+
     })
     
     test('Verify the api is able to submit the API data in UI', async ({ page }) => {
