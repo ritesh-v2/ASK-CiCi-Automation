@@ -26,4 +26,4 @@ jobs:
 
       # Run Playwright tests and generate HTML report
       - name: Run your tests
-        run: npx playwright test tests/contact.spec.ts --reporter=html  # Run Playwright tests
+        run: npx playwright test tests/apitest.spec.ts --reporter=html  # Run Playwright tests

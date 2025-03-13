@@ -77,9 +77,13 @@ test.describe('This block is used for the contact form', () => {
 
         await adClose.click({timeout:30000});*/
 
-        const captchaCh = await page.locator('//div[@class="rc-anchor-center-item rc-anchor-checkbox-holder"]')
+        const captchaCh = await page.locator('//iframe[@title="reCAPTCHA"]')
 
-        await captchaCh.check();
+        await captchaCh.click();
+
+        await page.getByRole("button",{name:'Submit'}).click();
+
+        await page.pause()
 
     })
     
