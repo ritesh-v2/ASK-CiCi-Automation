@@ -18,6 +18,7 @@ test.describe('Exercise ', () => {
 
         await expect(ContactTitle).toHaveTitle("Contact Us | SDET Unicorns");//verify title
         
+        console.log('Changes Done')
         
     })
     

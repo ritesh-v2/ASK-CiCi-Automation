@@ -83,8 +83,6 @@ test.describe('This block is used for the contact form', () => {
 
         await page.getByRole("button",{name:'Submit'}).click();
 
-        await page.pause()
-
     })
     
 })
