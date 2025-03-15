@@ -25,7 +25,7 @@ jobs:
           npx playwright install --with-deps  # Install Playwright browsers with dependencies
 
       # Run Playwright tests and generate HTML report
-      - name: Run your tests
+      - name: Run Home page tests
         run: npx playwright test demoHome.spec.ts --reporter=html
-      - name: Run demo Project  
+      - name: Run Search page Project  
         run: npx playwright test demoSearch.spec.ts --reporter=html 
