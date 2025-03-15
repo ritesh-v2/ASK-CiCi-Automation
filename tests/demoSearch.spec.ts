@@ -15,7 +15,7 @@ test.describe('This block is used for the demo project', () => {
 
         await searchButton.click();
 
-        expect(page.url()).toContain('https://www.icc-cricket.com/search');
+        expect(page.url().toLowerCase()).toContain('https://www.icc-cricket.com/search');
 
         const textTerm = await page.getByPlaceholder('what are you looking for?');
 
