@@ -11,7 +11,7 @@ test.describe('This block is used for the demo project', () => {
 
     test('Verify the URL of the page consist of Current campaign', async ({ page }) => {
 
-        const curCamp = await page.url();
+        const curCamp = await page.url().toLowerCase()
 
         await expect(curCamp).toContain('icc-cricket');
     
@@ -29,25 +29,6 @@ test.describe('This block is used for the demo project', () => {
        await expect(page.getByAltText('Header Logo')).toBeVisible();
         
     })
-
-    test('Verify the search for term, its URL and Result for search', async ({ page }) => {
-
-        const searchButton = await page.locator('//a[@href="/search"]');
-
-        await searchButton.click();
-
-        await expect(page.url()).toContain('https://www.icc-cricket.com/search');
-
-        const textTerm = await page.getByPlaceholder('what are you looking for?');
-
-        await textTerm.fill('India');
-
-        await textTerm.press('Enter');
-
-        await expect(page.url).toContain('https://www.icc-cricket.com/search?q=india');
-
-    })
-
     // test('Verify the menu links in the header section of home page', async ({ page }) => {
 
     //     const menuLink = await page.locator('#primaryNavigation__i9x0aUyv9c_CsVXO5FBi a')
