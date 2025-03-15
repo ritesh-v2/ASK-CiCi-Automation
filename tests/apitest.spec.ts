@@ -62,6 +62,8 @@ test.describe('API test', () => {
 
         await page.getByRole("button",{name:'Submit'}).click();
         
+        console.log('Changes Done')
+        
     })
     
     
