@@ -26,4 +26,6 @@ jobs:
 
       # Run Playwright tests and generate HTML report
       - name: Run your tests
-        run: npx playwright test tests --reporter=html  # Run Playwright tests
+        run: npx playwright test demoHome.spec.ts --reporter=html
+      - name: Run demo Project  
+        run: npx playwright test demoSearch.spec.ts --reporter=html 
