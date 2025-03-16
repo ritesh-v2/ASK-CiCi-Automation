@@ -25,9 +25,9 @@ test.describe('This block is used for the demo project', () => {
 
         await textTerm.press('Enter');
 
-        await page.waitForTimeout(5000);
-
         const serachURL = await page.url().toLowerCase()
+
+        await page.waitForTimeout(5000);
 
         await expect(serachURL).toContain("https://www.icc-cricket.com/search?q=india")
         
