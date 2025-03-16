@@ -27,7 +27,5 @@ test.describe('This block is used for the demo project', () => {
 
         expect(serachURL).toContain("https://www.icc-cricket.com/search?q=india")
 
-        await page.pause();
-
     })     
 })
