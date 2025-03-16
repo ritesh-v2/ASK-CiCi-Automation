@@ -13,6 +13,8 @@ test.describe('This block is used for the demo project', () => {
 
         const searchButton = await page.locator('//a[@href="/search"]');
 
+        await page.waitForTimeout(2000);
+
         await searchButton.click();
 
         await expect(page.url().toLowerCase()).toContain('https://www.icc-cricket.com/search');
@@ -26,6 +28,6 @@ test.describe('This block is used for the demo project', () => {
         const serachURL = await page.url().toLowerCase()
 
         expect(serachURL).toContain("https://www.icc-cricket.com/search?q=india")
-
+        
     })     
 })
