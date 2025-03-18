@@ -31,3 +31,5 @@ jobs:
         run: npx playwright test demoSearch.spec.ts --reporter=html 
       - name: Run For the availabe tabs with the link
         run: npx playwright test demoSearchTabs.spec.ts --reporter=html
+      - name: Run For the rank table 
+        run: npx playwright test demoRankingTable.spec.ts --reporter=html
