@@ -19,17 +19,17 @@ test.describe('This block is used for the demo project', () => {
 
         await expect(page.url().toLowerCase()).toContain('https://www.icc-cricket.com/search');
 
-        const textTerm = await page.getByPlaceholder('what are you looking for?');
+        const textTerm = page.getByPlaceholder('what are you looking for?');
 
         await textTerm.fill('India');
 
         await textTerm.press('Enter');
 
-        const serachURL = await page.url().toLowerCase()
+        await page.waitForLoadState()
 
-        await page.waitForTimeout(10000);
+        const serachURL = page.url().toLowerCase()
 
-        await expect(serachURL).toContain("https://www.icc-cricket.com/search?q=india")
+        expect(serachURL).toContain("https://www.icc-cricket.com/search?q=india")
         
     })     
 })
