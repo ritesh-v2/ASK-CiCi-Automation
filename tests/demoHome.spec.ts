@@ -1,5 +1,6 @@
 import {test, expect} from "@playwright/test"
 import exp from "constants"
+import { HomePage } from "../pages/demoHome.page"
 
 test.describe('This block is used for the demo project', () => {
 
