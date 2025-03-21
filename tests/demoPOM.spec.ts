@@ -27,9 +27,10 @@ test('Verify the navigation to search page', async ({ page }) => {
 
     await homePage.goto()
 
-    await homePage.verifyHomePageSearch();
+    await homePage.navigateToHomePageSearch();
 
     await homePage.verifyHomePageURl('https://www.icc-cricket.com/search');
     
-})
+})//Verify the navigation to search page with URL
+
 

@@ -35,9 +35,10 @@ export class HomePage{
         expect(expectedTitle).toContain(text);
     }
 
-    async verifyHomePageSearch(){
+    async navigateToHomePageSearch(){
 
         await this.searchButton.click();
-        
     }
+
+
 }
