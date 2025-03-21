@@ -7,7 +7,7 @@ test('Verify the Home page URL and Title', async ({ page }) => {
 
     await homePage.goto();
 
-    await homePage.verifyHomePageURl('icc-cricket')
+    await homePage.PageURL('icc-cricket')
     
 })//Verify the URL
 
@@ -29,8 +29,20 @@ test('Verify the navigation to search page', async ({ page }) => {
 
     await homePage.navigateToHomePageSearch();
 
-    await homePage.verifyHomePageURl('https://www.icc-cricket.com/search');
+    await homePage.PageURL('https://www.icc-cricket.com/search');
     
 })//Verify the navigation to search page with URL
+test('Verify the search for respective team', async ({ page }) => {
 
+    const homePage = new HomePage(page);
+
+    await homePage.goto();
+
+    await homePage.navigateToHomePageSearch();
+
+    await homePage.searchTeam('India');
+
+    await homePage.PageURL('https://www.icc-cricket.com/search')
+
+})
 

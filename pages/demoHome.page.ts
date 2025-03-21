@@ -23,7 +23,7 @@ export class HomePage{
         await this.page.goto('https://www.icc-cricket.com/')
     }
 
-    async verifyHomePageURl(text:string){
+    async PageURL(text:string){
 
     expect(this.page.url()).toContain(text);
 
@@ -40,5 +40,10 @@ export class HomePage{
         await this.searchButton.click();
     }
 
+    async searchTeam(text:string){
+
+        this.searchTextbox.fill(text)
+
+    }
 
 }
