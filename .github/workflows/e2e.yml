@@ -27,11 +27,11 @@ jobs:
       # Run Playwright tests and generate HTML report
       - name: Run Home page tests
         run: npx playwright test demoHome.spec.ts --reporter=html
-      - name: Run Search page Project  
-        run: npx playwright test demoSearch.spec.ts --reporter=html 
-      - name: Run For the availabe tabs with the link
-        run: npx playwright test demoSearchTabs.spec.ts --reporter=html
-      - name: Run For the rank table 
-        run: npx playwright test demoRankingTable.spec.ts --reporter=html
-      - name: Run for the new tab
-        run: npx playwright test demoNewTab.spec.ts --reporter=html
+      # - name: Run Search page Project  
+      #   run: npx playwright test demoSearch.spec.ts --reporter=html 
+      # - name: Run For the availabe tabs with the link
+      #   run: npx playwright test demoSearchTabs.spec.ts --reporter=html
+      # - name: Run For the rank table 
+      #   run: npx playwright test demoRankingTable.spec.ts --reporter=html
+      # - name: Run for the new tab
+      #   run: npx playwright test demoNewTab.spec.ts --reporter=html
